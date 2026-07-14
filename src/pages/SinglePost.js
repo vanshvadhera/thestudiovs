@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { images } from '../assets';
 
 const SinglePost = () => {
   const [formData, setFormData] = useState({
@@ -33,12 +34,11 @@ const SinglePost = () => {
         </div>
       </section>
 
-      <div id="content">
-        <section className="single-post-section">
-          <div className="section-title">
-            <h1>Blog</h1>
-          </div>
-          <div className="container">
+      <section className="single-post-section">
+        <div className="section-title">
+          <h1>Blog</h1>
+        </div>
+        <div className="container">
             <div className="row">
               <div className="col-lg-8">
                 <div className="post-content">
@@ -59,7 +59,7 @@ const SinglePost = () => {
                   <h3>Give your dreams a shape of reality</h3>
                   <div className="post-thumbnail">
                     <img
-                      src="/templates.fabric-lab.co/archios/upload/architecture/single-post/single-post-img.jpg"
+                      src={images.posts.postImage}
                       alt=""
                     />
                   </div>
@@ -124,7 +124,7 @@ const SinglePost = () => {
                   <div className="author-box">
                     <div className="image-holder">
                       <img
-                        src="/templates.fabric-lab.co/archios/upload/architecture/single-post/author.jpg"
+                        src={images.posts.author}
                         alt=""
                       />
                     </div>
@@ -146,7 +146,7 @@ const SinglePost = () => {
                           <div className="image-holder">
                             <img
                               alt=""
-                              src="/templates.fabric-lab.co/archios/upload/architecture/single-post/commenter1.jpg"
+                              src={images.posts.commenters[0]}
                             />
                           </div>
                           <div className="comment-content">
@@ -166,7 +166,7 @@ const SinglePost = () => {
                           <div className="image-holder">
                             <img
                               alt=""
-                              src="/templates.fabric-lab.co/archios/upload/architecture/single-post/commenter2.jpg"
+                              src={images.posts.commenters[1]}
                             />
                           </div>
                           <div className="comment-content">
@@ -186,7 +186,7 @@ const SinglePost = () => {
                           <div className="image-holder">
                             <img
                               alt=""
-                              src="/templates.fabric-lab.co/archios/upload/architecture/single-post/commenter3.jpg"
+                              src={images.posts.commenters[2]}
                             />
                           </div>
                           <div className="comment-content">
@@ -331,7 +331,7 @@ const SinglePost = () => {
                       <ul className="popular-list">
                         <li>
                           <img
-                            src="/templates.fabric-lab.co/archios/upload/architecture/blog1.jpg"
+                            src={images.blog[0]}
                             alt=""
                           />
                           <div className="side-content">
@@ -343,7 +343,7 @@ const SinglePost = () => {
                         </li>
                         <li>
                           <img
-                            src="/templates.fabric-lab.co/archios/upload/architecture/blog2.jpg"
+                            src={images.blog[1]}
                             alt=""
                           />
                           <div className="side-content">
@@ -355,7 +355,7 @@ const SinglePost = () => {
                         </li>
                         <li>
                           <img
-                            src="/templates.fabric-lab.co/archios/upload/architecture/blog3.jpg"
+                            src={images.blog[2]}
                             alt=""
                           />
                           <div className="side-content">
@@ -429,7 +429,6 @@ const SinglePost = () => {
             </div>
           </div>
         </section>
-      </div>
     </>
   );
 };

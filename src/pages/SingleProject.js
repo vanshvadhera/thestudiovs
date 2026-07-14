@@ -1,22 +1,21 @@
 import React, { useEffect } from 'react';
+import { images } from '../assets';
 
 const SingleProject = () => {
-
   useEffect(() => {
-    // Initialize Magnific Popup for gallery
     if (window.$ && window.$.fn.magnificPopup) {
       window.$('.zoom').magnificPopup({
         type: 'image',
         gallery: {
-          enabled: true
-        }
+          enabled: true,
+        },
       });
     }
   }, []);
 
-  const galleryImages = Array.from({ length: 16 }, (_, i) => ({
-    id: i + 1,
-    image: `/templates.fabric-lab.co/archios/upload/architecture/single-project/gallery${i + 1}.jpg`
+  const galleryImages = images.gallery.map((image, index) => ({
+    id: index + 1,
+    image,
   }));
 
   return (
@@ -36,10 +35,7 @@ const SingleProject = () => {
         <div className="container">
           <div className="single-project-content">
             <div className="feature-image">
-              <img
-                src="/templates.fabric-lab.co/archios/upload/architecture/single-project/project-img2.jpg"
-                alt="project"
-              />
+              <img src={images.projectFeature} alt="project" />
               <div className="hover-feature">
                 <h2>Give your dreams a shape of reality</h2>
                 <div className="project-content">
@@ -66,9 +62,10 @@ const SingleProject = () => {
             </div>
             <div className="project-content">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                nostrud exercitation ullamco laboris nisi ut aliquip
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip
               </p>
             </div>
           </div>
