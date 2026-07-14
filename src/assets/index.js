@@ -9,8 +9,16 @@ import member2 from './images/team/member2.jpg';
 import member3 from './images/team/member3.jpg';
 
 import project1 from './images/projects/s1.jpg';
-import project2 from './images/projects/s2.jpg';
-import project3 from './images/projects/s3.jpg';
+import project2 from './images/projects/s2.PNG';
+import project3 from './images/projects/s3.JPG';
+import project4 from './images/projects/s4.PNG';
+import project5 from './images/projects/s5.PNG';
+import project6 from './images/projects/s6.PNG';
+import project7 from './images/projects/s7.JPG';
+import project8 from './images/projects/s8.PNG';
+import project9 from './images/projects/s9.PNG';
+import project10 from './images/projects/s10.PNG';
+import project11 from './images/projects/s11.JPG';
 
 import portfolio1 from './images/portfolio/portfolio1.jpg';
 import portfolio2 from './images/portfolio/portfolio2.jpg';
@@ -65,7 +73,19 @@ export const images = {
   logo,
   blog: [blog1, blog2, blog3],
   team: [member1, member2, member3],
-  projects: [project1, project2, project3],
+  projects: [
+    project1,
+    project2,
+    project3,
+    project4,
+    project5,
+    project6,
+    project7,
+    project8,
+    project9,
+    project10,
+    project11,
+  ],
   portfolio: [
     portfolio1,
     portfolio2,

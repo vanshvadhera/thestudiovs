@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { images } from '../../assets';
+import { projects } from '../../assets/projects';
 
 const Work = () => {
   const carouselRef = useRef(null);
@@ -12,20 +12,22 @@ const Work = () => {
     const tryInitCarousel = () => {
       if (window.$ && window.$.fn.owlCarousel && carouselRef.current) {
         const $carousel = window.$(carouselRef.current);
-        if (!$carousel.data('owl.carousel')) {
-          $carousel.owlCarousel({
-            autoPlay: 10000,
-            navigation: true,
-            loop: true,
-            nav: true,
-            responsive: {
-              0: { items: 1 },
-              768: { items: 2 },
-              960: { items: 2 },
-              1200: { items: 3 },
-            },
-          });
+        if ($carousel.data('owl.carousel')) {
+          $carousel.trigger('destroy.owl.carousel');
+          $carousel.find('.owl-stage-outer').children().unwrap();
         }
+        $carousel.owlCarousel({
+          autoPlay: 10000,
+          navigation: true,
+          loop: true,
+          nav: true,
+          responsive: {
+            0: { items: 1 },
+            768: { items: 2 },
+            960: { items: 2 },
+            1200: { items: 3 },
+          },
+        });
         return true;
       }
       return false;
@@ -42,44 +44,6 @@ const Work = () => {
 
     return () => clearInterval(interval);
   }, []);
-
-  const portfolioItems = [
-    {
-      image: images.projects[0],
-      number: '01',
-      category: 'buildings',
-      title: 'The concept for better living',
-      link: '/project/1',
-    },
-    {
-      image: images.projects[1],
-      number: '02',
-      category: 'buildings',
-      title: 'Dreams under construction',
-      link: '/project/2',
-    },
-    {
-      image: images.projects[2],
-      number: '03',
-      category: 'buildings',
-      title: 'Shaping for a better future',
-      link: '/project/3',
-    },
-    {
-      image: images.projects[0],
-      number: '04',
-      category: 'buildings',
-      title: 'The concept for better living',
-      link: '/project/4',
-    },
-    {
-      image: images.projects[1],
-      number: '05',
-      category: 'buildings',
-      title: 'Dreams under construction',
-      link: '/project/5',
-    },
-  ];
 
   return (
     <section className="scroller-section" id="work">
@@ -98,8 +62,8 @@ const Work = () => {
             className="owl-carousel owl-theme"
             data-num="3"
           >
-            {portfolioItems.map((item, index) => (
-              <div key={index} className="item">
+            {projects.map((item) => (
+              <div key={item.id} className="item">
                 <div className="scroller-post">
                   <div className="image-holder">
                     <img src={item.image} alt={item.title} />

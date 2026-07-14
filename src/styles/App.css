@@ -368,3 +368,195 @@ section.tabs-collapse-section .how-we-work-accordion .process-panel .accordion-b
   height: 100%;
   border: 0;
 }
+
+/* Sidebar — hide stray menu-toggle line above Home on desktop */
+header .open-menu-toggle {
+  display: none;
+  padding: 31px 26px;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: #c4986e;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 1279px) {
+  header .open-menu-toggle {
+    display: block;
+  }
+}
+
+header .open-menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 2px;
+  background-color: #ffffff;
+  margin-bottom: 6px;
+}
+
+header .open-menu-toggle span:last-child {
+  width: 17px;
+  margin-bottom: 0;
+}
+
+header .nav-menu-box ul.navigation-menu-list > li:first-child {
+  border-top: none;
+}
+
+/* About TheStudioVS — statement layout */
+.features-box.studio-about {
+  margin-top: 110px;
+}
+
+.studio-about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.studio-about-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.studio-about-logo {
+  width: 42px !important;
+  height: 42px !important;
+  max-width: 42px !important;
+  object-fit: contain;
+  background: #111;
+  padding: 4px;
+  border: 1px solid #515151;
+  margin: 0 !important;
+}
+
+.studio-about-eyebrow span {
+  color: #c4986e;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.studio-about-copy h3 {
+  font-family: "Bebas Neue", cursive;
+  font-size: 48px;
+  line-height: 1;
+  letter-spacing: 1px;
+  margin-bottom: 22px;
+  color: #ffffff;
+}
+
+.studio-about-copy h3 em {
+  font-style: normal;
+  color: #c4986e;
+}
+
+.studio-about-lead {
+  font-size: 22px !important;
+  line-height: 1.45 !important;
+  color: #ffffff !important;
+  margin-bottom: 20px !important;
+  padding-left: 16px;
+  border-left: 2px solid #c4986e;
+}
+
+.studio-about-copy p {
+  color: #b7b7b7;
+  margin-bottom: 16px;
+  line-height: 1.7;
+}
+
+.studio-about-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 28px;
+}
+
+.studio-about-tags li {
+  padding: 8px 12px;
+  border: 1px solid #515151;
+  color: #c4986e;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  background: #2c2c2c;
+}
+
+.studio-about-media {
+  position: relative;
+}
+
+.studio-about-frame {
+  position: relative;
+  z-index: 1;
+}
+
+.studio-about-frame::before {
+  content: "";
+  position: absolute;
+  inset: 18px -18px -18px 18px;
+  border: 1px solid #c4986e;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.studio-about-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.studio-about-caption {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 28px;
+  padding-left: 4px;
+}
+
+.studio-about-caption span {
+  font-family: "Bebas Neue", cursive;
+  font-size: 28px;
+  color: #c4986e;
+  line-height: 1;
+}
+
+.studio-about-caption p {
+  margin: 0;
+  color: #ffffff;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 991px) {
+  .studio-about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .studio-about-copy h3 {
+    font-size: 40px;
+  }
+
+  .studio-about-frame::before {
+    inset: 14px -14px -14px 14px;
+  }
+}
+
+@media (max-width: 575px) {
+  .studio-about-lead {
+    font-size: 18px !important;
+  }
+
+  .studio-about-copy h3 {
+    font-size: 34px;
+  }
+}

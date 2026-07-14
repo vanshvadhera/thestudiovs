@@ -208,43 +208,51 @@ const AlternativeServices = () => {
             </div>
           </div>
         </div>
-        <div className="features-box">
-          <div className="row">
-            <div className="col-lg-5">
-              <div className="feature-content">
-                <h3>About TheStudioVS</h3>
-                <p>
-                  At TheStudioVS, architecture is not treated as a product — it is
-                  shaped as an experience. Every project begins with understanding
-                  how people live, move, work, and interact with space. Our studio
-                  translates these insights into carefully composed environments that
-                  feel natural, efficient, and enduring.
-                </p>
-                <p>
-                  We operate as a fully integrated design and build practice,
-                  bringing together concept design, technical development,
-                  construction execution, turnkey delivery, interior craftsmanship,
-                  and structural coordination under one roof.
-                </p>
-                <p>
-                  Our design language is clean, purposeful, and responsive to
-                  context — focusing on proportion, material honesty, light,
-                  structure, and long-term performance.
-                </p>
-                <a
-                  href="#contact"
-                  className="theme-button"
-                >
-                  <span>Connect With Us</span>
-                </a>
+        <div className="features-box studio-about">
+          <div className="studio-about-grid">
+            <div className="studio-about-copy">
+              <div className="studio-about-eyebrow">
+                <img src={images.logo} alt="" className="studio-about-logo" />
+                <span>Design & Build Practice</span>
               </div>
+              <h3>
+                About <em>TheStudioVS</em>
+              </h3>
+              <p className="studio-about-lead">
+                Architecture is not treated as a product — it is shaped as an
+                experience.
+              </p>
+              <p>
+                Every project begins with understanding how people live, move,
+                work, and interact with space. Our studio translates these
+                insights into carefully composed environments that feel natural,
+                efficient, and enduring.
+              </p>
+              <p>
+                We operate as a fully integrated design and build practice —
+                concept design, technical development, construction, turnkey
+                delivery, interiors, and structural coordination under one roof.
+              </p>
+              <ul className="studio-about-tags">
+                <li>Proportion</li>
+                <li>Material Honesty</li>
+                <li>Light</li>
+                <li>Structure</li>
+              </ul>
+              <a href="#contact" className="theme-button">
+                <span>Connect With Us</span>
+              </a>
             </div>
-            <div className="col-lg-7">
-              <div className="image-holder">
+            <div className="studio-about-media">
+              <div className="studio-about-frame">
                 <img
                   src={images.services.transformationalDesigns}
                   alt="TheStudioVS design and build"
                 />
+              </div>
+              <div className="studio-about-caption">
+                <span>01</span>
+                <p>Clean. Purposeful. Responsive to context.</p>
               </div>
             </div>
           </div>

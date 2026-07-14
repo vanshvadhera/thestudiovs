@@ -1,7 +1,12 @@
 import React, { useEffect } from 'react';
-import { images } from '../assets';
+import { useParams } from 'react-router-dom';
+import { projects } from '../assets/projects';
 
 const SingleProject = () => {
+  const { id } = useParams();
+  const project =
+    projects.find((item) => String(item.id) === String(id)) || projects[0];
+
   useEffect(() => {
     if (window.$ && window.$.fn.magnificPopup) {
       window.$('.zoom').magnificPopup({
@@ -11,19 +16,18 @@ const SingleProject = () => {
         },
       });
     }
-  }, []);
+  }, [project]);
 
-  const galleryImages = images.gallery.map((image, index) => ({
-    id: index + 1,
-    image,
-  }));
+  const galleryImages = projects
+    .filter((item) => item.id !== project.id)
+    .slice(0, 8);
 
   return (
     <>
       <section className="page-banner-section">
         <div className="container">
-          <h1>Influenced by Power</h1>
-          <p>The art of building</p>
+          <h1>{project.title}</h1>
+          <p>Architecture | Design | Build</p>
         </div>
       </section>
 
@@ -35,26 +39,26 @@ const SingleProject = () => {
         <div className="container">
           <div className="single-project-content">
             <div className="feature-image">
-              <img src={images.projectFeature} alt="project" />
+              <img src={project.image} alt={project.title} />
               <div className="hover-feature">
-                <h2>Give your dreams a shape of reality</h2>
+                <h2>{project.title}</h2>
                 <div className="project-content">
                   <ul className="project-data-list">
                     <li>
-                      <span className="data-name">Client</span>
-                      <span className="data-text">archios Architecture</span>
+                      <span className="data-name">Studio</span>
+                      <span className="data-text">TheStudioVS</span>
                     </li>
                     <li>
                       <span className="data-name">Category</span>
-                      <span className="data-text">interior, exterior</span>
+                      <span className="data-text">{project.category}</span>
                     </li>
                     <li>
-                      <span className="data-name">Date</span>
-                      <span className="data-text">01 June, 2021</span>
+                      <span className="data-name">Location</span>
+                      <span className="data-text">Noida</span>
                     </li>
                     <li>
                       <span className="data-name">Url</span>
-                      <span className="data-text">www.fabric-lab.co</span>
+                      <span className="data-text">www.thestudiovs.com</span>
                     </li>
                   </ul>
                 </div>
@@ -62,10 +66,9 @@ const SingleProject = () => {
             </div>
             <div className="project-content">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip
+                At TheStudioVS, each project is shaped as an experience — balancing
+                form, function, material honesty, and long-term performance into
+                carefully composed environments.
               </p>
             </div>
           </div>
@@ -73,7 +76,7 @@ const SingleProject = () => {
             {galleryImages.map((item) => (
               <li key={item.id}>
                 <a href={item.image} className="zoom">
-                  <img src={item.image} alt={`Gallery ${item.id}`} />
+                  <img src={item.image} alt={item.title} />
                 </a>
               </li>
             ))}
